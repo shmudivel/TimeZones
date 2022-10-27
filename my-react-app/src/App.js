@@ -1,4 +1,5 @@
 import React from 'react';
+import SelectTime from './components/SelectTime';
 
 
 
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <div>
-      <h1>Hello time Zones</h1>
+      <SelectTime />
     </div>
   );
 }
