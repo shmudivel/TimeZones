@@ -1,5 +1,6 @@
 import React from 'react';
-import SelectTime from './components/SelectTime';
+import AddSelectTimeZones from './components/AddSelectTimeZones';
+
 
 
 
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <div>
-      <SelectTime />
+      <AddSelectTimeZones  />
     </div>
   );
 }
