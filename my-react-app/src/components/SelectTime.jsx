@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import TimezoneSelect from 'react-timezone-select'
+import ListOfHours from './ListOfHours'
 
 const SelectTime = () => {
     const [selectedTimezone, setSelectedTimezone] = useState(
@@ -24,6 +25,7 @@ const SelectTime = () => {
         >
           {JSON.stringify(selectedTimezone, null, 2)}
         </pre>
+        <ListOfHours title={selectedTimezone.value} />
     </div>
   )
 }
