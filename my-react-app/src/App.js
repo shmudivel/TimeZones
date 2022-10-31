@@ -13,6 +13,8 @@ function App() {
   return (
     <div className={style.bg}>
       <AddSelectTimeZones  />
+      <script src="https://moment.github.io/luxon/global/luxon.min.js">
+      </script>
     </div>
   );
 }

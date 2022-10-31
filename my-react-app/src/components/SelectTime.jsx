@@ -7,7 +7,7 @@ const SelectTime = () => {
       Intl.DateTimeFormat().resolvedOptions().timeZone)
 
   return (
-    <div className=''>
+    <div className='border-2 round-md'>
       <div className=''>
         <TimezoneSelect
           value={selectedTimezone}
@@ -25,7 +25,7 @@ const SelectTime = () => {
           {JSON.stringify(selectedTimezone, null, 2)}
 
         </pre> */}
-        <ListOfHours title={selectedTimezone.value} />
+        <ListOfHours title={selectedTimezone.value} num={selectedTimezone.offset} />
         </div>
     </div>
   )
