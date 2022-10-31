@@ -5,7 +5,7 @@ const ListOfHours = (props) => {
     <div>
         <h1 className="">
 
-      Table{props.title}
+     {props.title}
         </h1>
     </div>
   )

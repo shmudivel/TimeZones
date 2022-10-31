@@ -7,16 +7,15 @@ const SelectTime = () => {
       Intl.DateTimeFormat().resolvedOptions().timeZone)
 
   return (
-    <div>
-      <h1>Your Time Zone Now</h1>
-      <div className="select-wrapper">
+    <div className=''>
+      <div className=''>
         <TimezoneSelect
           value={selectedTimezone}
           onChange={setSelectedTimezone}
         />
-      </div>
-      <h3>Output:</h3>
-      <pre
+
+      {/* <h3>Output:</h3> */}
+      {/* <pre
           style={{
             margin: '0 20px',
             fontWeight: 500,
@@ -24,8 +23,10 @@ const SelectTime = () => {
           }}
         >
           {JSON.stringify(selectedTimezone, null, 2)}
-        </pre>
+
+        </pre> */}
         <ListOfHours title={selectedTimezone.value} />
+        </div>
     </div>
   )
 }
