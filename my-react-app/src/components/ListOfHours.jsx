@@ -1,13 +1,28 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ListOfHours = (props) => {
+    const [clockState, setClockState] = useState();
+
+    useEffect(() => {
+        setInterval(() => {
+            const date = new Date();
+
+            // const dateAndGMT = date.toGMTString()
+
+            // setClockState(dateAndGMT.getTimezoneOffset())
+            setClockState(date.getTimezoneOffset())
+        }, 1000)
+    }, [])
 
     return (
     <div>
       <div>
+      <div>GMT: {clockState}</div>
         <h1 className="">{props.title}</h1>
         <h2>{props.num}</h2>
+
+        
 
       </div>
 

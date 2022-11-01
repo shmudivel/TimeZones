@@ -32,12 +32,13 @@ const AddSelectTimeZones = () => {
         
       </button>
     <div className="py-2 grid grid-flow-col gap-2">
+
+
+
+
+      <SelectTime />
+      <SelectTime />
       {addTZ}
-
-
-
-      <SelectTime />
-      <SelectTime />
 
     </div>
 
