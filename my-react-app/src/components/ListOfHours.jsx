@@ -14,64 +14,69 @@ const ListOfHours = (props) => {
     }, 2000);
   }, []);
 
-//   const gmtPlusOffsetFromSelect = timeGmt + props.num;
+  //   const gmtPlusOffsetFromSelect = timeGmt + props.num;
 
-function reduceGmt(hour) {
+  function reduceGmt(hour) {
     // const totalHours = ((timeGmt/24 + (props.num/24)) % 1) * 24 + hour
-    const totalHours = timeGmt + props.num + hour
+    const totalHours = timeGmt + props.num + hour;
     if (totalHours < 24) {
-        return totalHours;
+      return totalHours;
     } else if (totalHours < 36) {
-        return totalHours - 24;
-    } else if ( totalHours < 48){
-        return totalHours - 24;
+      return totalHours - 24;
+    } else if (totalHours < 48) {
+      return totalHours - 24;
     } else {
-        return totalHours - 48;
-    } 
-        // return cosnt totalHours = ((timeGmt/24 + (props.num/24)) % 1) * 24 + hour
-}
+      return totalHours - 48;
+    }
+    // return cosnt totalHours = ((timeGmt/24 + (props.num/24)) % 1) * 24 + hour
+  }
 
-// const testMODexcel = timeGmt + (props.num / 24)
-// const testMODexcel = 120 + (4 / 24)
-// console.log(testMODexcel);
+  // const testMODexcel = timeGmt + (props.num / 24)
+  // const testMODexcel = 120 + (4 / 24)
+  // console.log(testMODexcel);
 
-// const testExcelAlbina = ((timeGmt/24 + (props.num/24)) % 1) * 24
-  
+  // const testExcelAlbina = ((timeGmt/24 + (props.num/24)) % 1) * 24
 
   return (
     <div>
-      <div>
-        <div>GMT: {timeGmt}</div>
-        <h1 className="">{props.title}</h1>
-        <h2>{props.num}</h2>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>GMT: {timeGmt}</th>
+            {props.title}
+            {props.num}
+          </tr>
+        </thead>
 
-      <ul>
-        <li>{reduceGmt(0)}</li>
-        <li>{reduceGmt(1)}</li>
-        <li>{reduceGmt(2)}</li>
-        <li>{reduceGmt(3)}</li>
-        <li>{reduceGmt(4)}</li>
-        <li>{reduceGmt(5)}</li>
-        <li>{reduceGmt(6)}</li>
-        <li>{reduceGmt(7)}</li>
-        <li>{reduceGmt(8)}</li>
-        <li>{reduceGmt(9)}</li>
-        <li>{reduceGmt(10)}</li>
-        <li>{reduceGmt(11)}</li>
-        <li>{reduceGmt(12)}</li>
-        <li>{reduceGmt(13)}</li>
-        <li>{reduceGmt(14)}</li>
-        <li>{reduceGmt(15)}</li>
-        <li>{reduceGmt(16)}</li>
-        <li>{reduceGmt(17)}</li>
-        <li>{reduceGmt(18)}</li>
-        <li>{reduceGmt(19)}</li>
-        <li>{reduceGmt(20)}</li>
-        <li>{reduceGmt(21)}</li>
-        <li>{reduceGmt(22)}</li>
-        <li>{reduceGmt(23)}</li>
-      </ul>
+        <tbody>
+          <tr>
+            <tr><td>{reduceGmt(0)}</td></tr>
+            <tr><td>{reduceGmt(1)}</td></tr>
+            <tr><td>{reduceGmt(2)}</td></tr>
+            <tr><td>{reduceGmt(3)}</td></tr>
+            <tr><td>{reduceGmt(4)}</td></tr>
+            <tr><td>{reduceGmt(5)}</td></tr>
+            <tr><td>{reduceGmt(6)}</td></tr>
+            <tr><td>{reduceGmt(7)}</td></tr>
+            <tr><td>{reduceGmt(8)}</td></tr>
+            <tr><td>{reduceGmt(9)}</td></tr>
+            <tr><td>{reduceGmt(10)}</td></tr>
+            <tr><td>{reduceGmt(11)}</td></tr>
+            <tr><td>{reduceGmt(12)}</td></tr>
+            <tr><td>{reduceGmt(13)}</td></tr>
+            <tr><td>{reduceGmt(14)}</td></tr>
+            <tr><td>{reduceGmt(15)}</td></tr>
+            <tr><td>{reduceGmt(16)}</td></tr>
+            <tr><td>{reduceGmt(17)}</td></tr>
+            <tr><td>{reduceGmt(18)}</td></tr>
+            <tr><td>{reduceGmt(19)}</td></tr>
+            <tr><td>{reduceGmt(20)}</td></tr>
+            <tr><td>{reduceGmt(21)}</td></tr>
+            <tr><td>{reduceGmt(22)}</td></tr>
+            <tr><td>{reduceGmt(23)}</td></tr>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
