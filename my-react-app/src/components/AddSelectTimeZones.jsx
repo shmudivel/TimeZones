@@ -5,8 +5,9 @@ import React, { useState } from "react";
 import SelectTime from "./SelectTime";
 
 // Styles Tailwind 
+// max-w-[500px]
 const style = {
-  container: ` max-w-[500px] bg-slate-100 m-auto rounded-md shadow-xl p-4`,
+  container: ` w-fit bg-slate-100 m-auto rounded-md shadow-xl p-4`,
   heading: `text-3xl font-bold text-center text-gray-800 p-2`,
   addBtn: ` rounded-md border text-xl p-4 w-full bg-purple-500`,
   selectsBox: ``,
@@ -32,7 +33,7 @@ const AddSelectTimeZones = () => {
         {/* <AiOutlinePlus size={30} /> */}
         
       </button>
-    <div className="py-2 grid grid-flow-col gap-2">
+    <div className="w-fit py-2 grid grid-flow-col gap-2">
 
 
 
