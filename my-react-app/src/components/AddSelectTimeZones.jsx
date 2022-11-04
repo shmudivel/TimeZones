@@ -4,8 +4,9 @@ import React, { useState } from "react";
 //components
 import SelectTime from "./SelectTime";
 
+// Styles Tailwind 
 const style = {
-  container: ` min-w-min bg-slate-100 m-auto rounded-md shadow-xl p-4`,
+  container: ` max-w-[500px] bg-slate-100 m-auto rounded-md shadow-xl p-4`,
   heading: `text-3xl font-bold text-center text-gray-800 p-2`,
   addBtn: ` rounded-md border text-xl p-4 w-full bg-purple-500`,
   selectsBox: ``,

@@ -1,5 +1,7 @@
 timezone select component: https://github.com/ndom91/react-timezone-select
 
+react-table: https://tanstack.com/table/v8/docs/guide/introduction
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
