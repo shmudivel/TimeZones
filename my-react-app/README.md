@@ -1,3 +1,9 @@
+Demo: http://shmudivel.github.io/TimeZones
+
+npm run deploy
+
+npm install -g gh-pages --save-dev
+
 timezone select component: https://github.com/ndom91/react-timezone-select
 
 react-table: https://tanstack.com/table/v8/docs/guide/introduction
