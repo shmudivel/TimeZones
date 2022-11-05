@@ -4,7 +4,7 @@ import React, { useState } from "react";
 //components
 import SelectTime from "./SelectTime";
 
-// Styles Tailwind 
+// Styles Tailwind
 // max-w-[500px]
 const style = {
   container: ` w-fit max-w-[500px] bg-slate-100 m-auto rounded-md shadow-xl p-4`,
@@ -20,42 +20,43 @@ const AddSelectTimeZones = () => {
     return <SelectTime />;
   };
 
-  const onBtnAddSelectTime = (event) => {
-    setAddTZ(addTZ.concat(<SelectTimeComp key={addTZ.length} />));
+  // const onBtnAddSelectTime = (event) => {
+  //   setAddTZ(addTZ.concat(<SelectTimeComp key={addTZ.length} />));
+  // };
+
+  const onAddBtnSelectTime = () => {
+    // Вот тут ключ 
+    let newAddTZ = <SelectTimeComp />;
+    setAddTZ([...addTZ, newAddTZ]);
   };
 
-  const onMinusBtnSelectTime = (event) => {
-    setAddTZ(addTZ.splice(<SelectTimeComp key={addTZ.length} />));
+  const onRemoveBtnSelectTime = (index) => {
+    let data = [...addTZ];
+    data.splice(index, 1);
+    setAddTZ(data);
   };
-
 
   return (
     <div className={style.container}>
       <h1 className={style.heading}>Time zones app</h1>
-        
-      <button className={style.addBtn} onClick={onBtnAddSelectTime}>
-        Add More Time zones 
-        {/* <AiOutlinePlus size={30} /> */}
-        
-      </button>
-      <button 
-      className={style.addBtn} 
-      onClick={onMinusBtnSelectTime}
-      ></button>
-    <div className=" w-fit min-w-[50px] py-2 grid grid-flow-col gap-2">
+      <div>
+        <button className={style.addBtn} onClick={onAddBtnSelectTime}>
+          Add More Time zones
+        </button>
 
+        <button
+          className={style.addBtn}
+          onClick={onRemoveBtnSelectTime}
+        >
+          remove Time zone
+        </button>
+      </div>
 
-
-
-      <SelectTime />
-      <SelectTime />
-      {addTZ}
-
-    </div>
-
-
-
-
+      <div className=" w-fit min-w-[50px] py-2 grid grid-flow-col gap-2">
+        <SelectTime />
+        <SelectTime />
+        {addTZ}
+      </div>
     </div>
   );
 };
