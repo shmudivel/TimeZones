@@ -4,7 +4,7 @@ import AddSelectTimeZones from './components/AddSelectTimeZones';
 
 //styles
 const style = {
-  bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#2F80ED] to-[#1CB5E0]`,
+  bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#bfdbfe] to-[#a5f3fc]`,
 }
 
 function App() {

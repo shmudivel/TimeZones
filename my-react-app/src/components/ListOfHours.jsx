@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 //Styles Tailwind
 const style = {
   table: `w-full table-auto`,
-  thead: ``,
-  thtr: `w-full`,
-  th: ` bg-slate-300`,
+  thead: `w-fit`,
+  thtr: `w-fit`,
+  th: ` rounded text-[0.60rem] md:text-base	 bg-slate-300`,
 
   //color
-  nightHours: ` bg-slate-400`,
-  workHours: `bg-green-300`,
-  restingHoures: `bg-yellow-300`,
+  nightHours: ` rounded border-[1px] border-b-slate-100 text-center  bg-purple-300`,
+  workHours: ` rounded border-[1px] border-b-slate-100 text-center  bg-lime-200`,
+  restingHoures: `  rounded border-[1px] border-b-slate-100 text-center  bg-amber-200`,
 };
 
 const ListOfHours = (props) => {
@@ -20,6 +20,7 @@ const ListOfHours = (props) => {
     setInterval(() => {
       const date = new Date();
       setTimeGmt(date.getUTCHours());
+
     }, 2000);
   }, []);
 
@@ -61,122 +62,122 @@ const ListOfHours = (props) => {
         <tbody className={style.tbody}>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(0))}>
-              {reduceGmt(0)}
+              {reduceGmt(0)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(1))}>
-              {reduceGmt(1)}
+              {reduceGmt(1)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(2))}>
-              {reduceGmt(2)}
+              {reduceGmt(2)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(3))}>
-              {reduceGmt(3)}
+              {reduceGmt(3)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(4))}>
-              {reduceGmt(4)}
+              {reduceGmt(4)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(5))}>
-              {reduceGmt(5)}
+              {reduceGmt(5)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(6))}>
-              {reduceGmt(6)}
+              {reduceGmt(6)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(7))}>
-              {reduceGmt(7)}
+              {reduceGmt(7)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(8))}>
-              {reduceGmt(8)}
+              {reduceGmt(8)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(9))}>
-              {reduceGmt(9)}
+              {reduceGmt(9)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(10))}>
-              {reduceGmt(10)}
+              {reduceGmt(10)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(11))}>
-              {reduceGmt(11)}
+              {reduceGmt(11)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(12))}>
-              {reduceGmt(12)}
+              {reduceGmt(12)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(13))}>
-              {reduceGmt(13)}
+              {reduceGmt(13)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(14))}>
-              {reduceGmt(14)}
+              {reduceGmt(14)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(15))}>
-              {reduceGmt(15)}
+              {reduceGmt(15)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(16))}>
-              {reduceGmt(16)}
+              {reduceGmt(16)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(17))}>
-              {reduceGmt(17)}
+              {reduceGmt(17)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(18))}>
-              {reduceGmt(18)}
+              {reduceGmt(18)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(19))}>
-              {reduceGmt(19)}
+              {reduceGmt(19)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(20))}>
-              {reduceGmt(20)}
+              {reduceGmt(20)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(21))}>
-              {reduceGmt(21)}
+              {reduceGmt(21)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(22))}>
-              {reduceGmt(22)}
+              {reduceGmt(22)}:00
             </td>
           </tr>
           <tr>
             <td className={threeStyleHourColoringStyle(reduceGmt(23))}>
-              {reduceGmt(23)}
+              {reduceGmt(23)}:00
             </td>
           </tr>
         </tbody>
