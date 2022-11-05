@@ -48,7 +48,7 @@ const AddSelectTimeZones = () => {
           className={style.addBtn}
           onClick={onRemoveBtnSelectTime}
         >
-          remove Time zone
+          Remove Time zone
         </button>
       </div>
 
