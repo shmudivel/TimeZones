@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/TimeZones/static/css/main.74314191.css",
-    "main.js": "/TimeZones/static/js/main.f5731eb9.js",
+    "main.js": "/TimeZones/static/js/main.6090c1da.js",
     "index.html": "/TimeZones/index.html",
     "main.74314191.css.map": "/TimeZones/static/css/main.74314191.css.map",
-    "main.f5731eb9.js.map": "/TimeZones/static/js/main.f5731eb9.js.map"
+    "main.6090c1da.js.map": "/TimeZones/static/js/main.6090c1da.js.map"
   },
   "entrypoints": [
     "static/css/main.74314191.css",
-    "static/js/main.f5731eb9.js"
+    "static/js/main.6090c1da.js"
   ]
 }
