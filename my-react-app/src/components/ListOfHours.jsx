@@ -26,8 +26,10 @@ const ListOfHours = (props) => {
 
   function reduceGmt(hour) {
     // const totalHours = ((timeGmt/24 + (props.num/24)) % 1) * 24 + hour
-    const totalHours = timeGmt + props.num + hour;
-    if (totalHours < 24) {
+    const totalHours = (timeGmt + props.num) + hour;
+    if ( totalHours < 0 ){
+      return totalHours + 24;
+    } else if (totalHours < 24) {
       return totalHours;
     } else if (totalHours < 36) {
       return totalHours - 24;
@@ -36,7 +38,10 @@ const ListOfHours = (props) => {
     } else {
       return totalHours - 48;
     }
+
   }
+
+  console.log(reduceGmt(0));
 
   function threeStyleHourColoringStyle(hour) {
     if (hour >= 8 && hour <= 17) {
