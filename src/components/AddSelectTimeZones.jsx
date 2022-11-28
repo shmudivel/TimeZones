@@ -68,7 +68,7 @@ const AddSelectTimeZones = () => {
 
       <div className=" w-fit min-w-[50px] py-2 grid grid-flow-col gap-2">
         <SelectTime />
-        <SelectTime />
+        {/* <SelectTime /> */}
         {addTZ}
       </div>
     </div>
