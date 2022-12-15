@@ -1,5 +1,6 @@
-import React, { useState, 
-  // useEffect 
+import React, {
+  useState,
+  // useEffect
 } from "react";
 // import { AiOutlinePlus } from "react-icons/ai";
 // import { AiOutlineMinus } from "react-icons/ai";
@@ -40,7 +41,7 @@ const AddSelectTimeZones = () => {
   // };
 
   const onAddBtnSelectTime = () => {
-    // Вот тут ключ 
+    // Вот тут ключ
     let newAddTZ = <SelectTimeComp />;
     setAddTZ([...addTZ, newAddTZ]);
   };
@@ -63,12 +64,11 @@ const AddSelectTimeZones = () => {
           {/* <AiOutlinePlus size={30}/>  */}
           <span>Add Time zone </span>
         </button>
-
       </div>
 
       <div className=" w-fit min-w-[50px] py-2 grid grid-flow-col gap-2">
         <SelectTime />
-        {/* <SelectTime /> */}
+        <SelectTime />
         {addTZ}
       </div>
     </div>

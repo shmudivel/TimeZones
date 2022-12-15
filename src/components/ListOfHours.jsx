@@ -16,18 +16,20 @@ const style = {
 const ListOfHours = (props) => {
   const [timeGmt, setTimeGmt] = useState();
 
+  const test = props.title;
+  console.log(test);
+
   useEffect(() => {
     setInterval(() => {
       const date = new Date();
       setTimeGmt(date.getUTCHours());
-
-    }, 2000);
+    }, 10000);
   }, []);
 
   function reduceGmt(hour) {
     // const totalHours = ((timeGmt/24 + (props.num/24)) % 1) * 24 + hour
-    const totalHours = (timeGmt + props.num) + hour;
-    if ( totalHours < 0 ){
+    const totalHours = timeGmt + props.num + hour;
+    if (totalHours < 0) {
       return totalHours + 24;
     } else if (totalHours < 24) {
       return totalHours;
@@ -38,7 +40,6 @@ const ListOfHours = (props) => {
     } else {
       return totalHours - 48;
     }
-
   }
 
   console.log(reduceGmt(0));
