@@ -43,10 +43,29 @@ const ListOfHours = (props) => {
   }
 
   function reduceGmt(hour) {
-    const totalHours = timeGmt + props.num + hour;
+    // let because of NaN and I need to redeclare it
+    let totalHours = timeGmt + props.num + hour;
+
+    // localHour is the local time plus the hour from table
+    const localHour = getLocalHour() + hour;
+
+    // if totalHours is not a number then return localHour
     if (isNaN(totalHours)) {
-      return getLocalHour() + hour;
-    } else if (totalHours < 0) {
+      let totalHours = localHour;
+      if (totalHours < 0) {
+        return totalHours + 24;
+      } else if (totalHours < 24) {
+        return totalHours;
+      } else if (totalHours < 36) {
+        return totalHours - 24;
+      } else if (totalHours < 48) {
+        return totalHours - 24;
+      } else {
+        return totalHours - 48;
+      }
+    }
+    // if totalHours is a number then return totalHours
+    if (totalHours < 0) {
       return totalHours + 24;
     } else if (totalHours < 24) {
       return totalHours;
@@ -58,8 +77,6 @@ const ListOfHours = (props) => {
       return totalHours - 48;
     }
   }
-
-  console.log(reduceGmt(0));
 
   function threeStyleHourColoringStyle(hour) {
     if (hour >= 8 && hour <= 17) {
