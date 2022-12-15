@@ -19,26 +19,40 @@ const ListOfHours = (props) => {
   const test = props.title;
   console.log(test);
 
-  useEffect(() => {
-    setInterval(() => {
-      const date = new Date();
-      setTimeGmt(date.getUTCHours());
-    }, 10000);
-  }, []);
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     const date = new Date();
+  //     setTimeGmt(date.getUTCHours());
+  //   }, 10000);
+  // }, []);
+
+  const getTimeGmt = () => {
+    return new Date().getUTCHours();
+  };
+
+  console.log(getTimeGmt());
+
+  const getLocalTime = () => {
+    return new Date().getHours();
+  };
 
   function reduceGmt(hour) {
     // const totalHours = ((timeGmt/24 + (props.num/24)) % 1) * 24 + hour
-    const totalHours = timeGmt + props.num + hour;
-    if (totalHours < 0) {
-      return totalHours + 24;
-    } else if (totalHours < 24) {
-      return totalHours;
-    } else if (totalHours < 36) {
-      return totalHours - 24;
-    } else if (totalHours < 48) {
-      return totalHours - 24;
+    if (timeGmt === undefined) {
+      return getLocalTime() + hour;
     } else {
-      return totalHours - 48;
+      const totalHours = timeGmt + props.num + hour;
+      if (totalHours < 0) {
+        return totalHours + 24;
+      } else if (totalHours < 24) {
+        return totalHours;
+      } else if (totalHours < 36) {
+        return totalHours - 24;
+      } else if (totalHours < 48) {
+        return totalHours - 24;
+      } else {
+        return totalHours - 48;
+      }
     }
   }
 
