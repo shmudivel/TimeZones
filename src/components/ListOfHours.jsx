@@ -16,9 +16,6 @@ const style = {
 const ListOfHours = (props) => {
   const [timeGmt, setTimeGmt] = useState();
 
-  const test = props.title;
-  console.log(test);
-
   useEffect(() => {
     setInterval(() => {
       const date = new Date();
