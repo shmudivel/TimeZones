@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/TimeZones/static/css/main.b64614af.css",
-    "main.js": "/TimeZones/static/js/main.bee24846.js",
+    "main.css": "/TimeZones/static/css/main.926f2387.css",
+    "main.js": "/TimeZones/static/js/main.80043417.js",
     "static/media/bg00.jpg": "/TimeZones/static/media/bg00.d8f07162ac042b8687b7.jpg",
     "index.html": "/TimeZones/index.html",
-    "main.b64614af.css.map": "/TimeZones/static/css/main.b64614af.css.map",
-    "main.bee24846.js.map": "/TimeZones/static/js/main.bee24846.js.map"
+    "main.926f2387.css.map": "/TimeZones/static/css/main.926f2387.css.map",
+    "main.80043417.js.map": "/TimeZones/static/js/main.80043417.js.map"
   },
   "entrypoints": [
-    "static/css/main.b64614af.css",
-    "static/js/main.bee24846.js"
+    "static/css/main.926f2387.css",
+    "static/js/main.80043417.js"
   ]
 }
