@@ -5,7 +5,7 @@ const style = {
   table: `w-full table-auto`,
   thead: `w-fit`,
   thtr: `w-fit`,
-  th: ` rounded text-[0.60rem] md:text-base	 bg-slate-300`,
+  th: ` rounded-sm text-[0.60rem] md:text-base	 bg-slate-300`,
 
   //color
   nightHours: ` rounded border-[1px] border-b-slate-100 text-center  bg-purple-300`,
