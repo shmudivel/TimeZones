@@ -13,7 +13,7 @@ import SelectTime from "./SelectTime";
 const style = {
   container: ` w-fit max-w-[500px] bg-slate-100 m-auto rounded-md shadow-xl p-4`,
   heading: `text-3xl font-bold text-center text-gray-800 p-2`,
-  addBtn: ` rounded-md border text-lg p-4 bg-purple-500`,
+  addBtn: ` rounded-sm border p-1 bg-purple-500 text-2xl text-white font-bold hover:bg-purple-600`,
   buttonsAddRemove: `grid grid-cols-2 gap2`,
   selectsBox: ``,
 };
@@ -21,24 +21,9 @@ const style = {
 const AddSelectTimeZones = () => {
   const [addTZ, setAddTZ] = useState([]);
 
-  // useEffect(() => {
-  //   const data = localStorage.getItem('my-time-zone');
-  //   if (data) {
-  //     setAddTZ(JSON.parse(data));
-  //   }
-  // }, []);
-
-  // useEffect (() => {
-  //   localStorage.setItem('my-time-zones', JSON.stringify(addTZ));
-  // });
-
   const SelectTimeComp = () => {
     return <SelectTime />;
   };
-
-  // const onBtnAddSelectTime = (event) => {
-  //   setAddTZ(addTZ.concat(<SelectTimeComp key={addTZ.length} />));
-  // };
 
   const onAddBtnSelectTime = () => {
     // Вот тут ключ
@@ -58,11 +43,11 @@ const AddSelectTimeZones = () => {
       <div className={style.buttonsAddRemove}>
         <button className={style.addBtn} onClick={onRemoveBtnSelectTime}>
           {/* <AiOutlineMinus size={30}/>  */}
-          <span>Remove Time zone </span>
+          <span>-</span>
         </button>
         <button className={style.addBtn} onClick={onAddBtnSelectTime}>
           {/* <AiOutlinePlus size={30}/>  */}
-          <span>Add Time zone </span>
+          <span>+</span>
         </button>
       </div>
 
