@@ -24,7 +24,7 @@ const SelectTime = () => {
   // }, []);
 
   return (
-    <div className="border-2 round-md">
+    <div className="border-1 text-sm round-sm">
       <div>
         <TimezoneSelect
           value={selectedTimezone}
