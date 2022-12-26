@@ -11,8 +11,8 @@ import SelectTime from "./SelectTime";
 // Styles Tailwind
 // max-w-[500px]
 const style = {
-  container: ` w-fit max-w-[500px] bg-slate-100 m-auto rounded-md shadow-xl p-4`,
-  heading: `text-3xl font-bold text-center text-gray-800 p-2`,
+  container: ` w-fit max-w-[500px] bg-slate-100 m-auto rounded-sm shadow-xl p-4`,
+  heading: `text-xl font-bold text-center text-gray-800 p-2`,
   addBtn: ` rounded-sm border p-1 bg-purple-500 text-2xl text-white font-bold hover:bg-purple-600`,
   buttonsAddRemove: `grid grid-cols-2 gap2`,
   selectsBox: ``,
@@ -39,7 +39,7 @@ const AddSelectTimeZones = () => {
 
   return (
     <div className={style.container}>
-      <h1 className={style.heading}>Time zones app</h1>
+      <h1 className={style.heading}>Time zones</h1>
       <div className={style.buttonsAddRemove}>
         <button className={style.addBtn} onClick={onRemoveBtnSelectTime}>
           {/* <AiOutlineMinus size={30}/>  */}
