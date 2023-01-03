@@ -26,8 +26,9 @@ const AddSelectTimeZones = () => {
   };
 
   const onAddBtnSelectTime = () => {
+    const id = Math.random() + Date.now();
     // Вот тут ключ
-    let newAddTZ = <SelectTimeComp />;
+    let newAddTZ = <SelectTimeComp key={id} />;
     setAddTZ([...addTZ, newAddTZ]);
   };
 
