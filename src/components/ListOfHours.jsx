@@ -29,9 +29,10 @@ const ListOfHours = (props) => {
   function defaultTimeZoneTitle() {
     const date = new Date();
     if (props.title === undefined) {
-      return date
-        .toLocaleTimeString("en-us", { timeZoneName: "short" })
-        .split(" ")[2];
+      return Intl.DateTimeFormat().resolvedOptions().timeZone;
+      // date
+      //   .toLocaleTimeString("en-us", { timeZoneName: "short" })
+      //   .split(" ")[2];
     } else {
       return props.title;
     }
@@ -81,6 +82,11 @@ const ListOfHours = (props) => {
     }
     return style.nightHours;
   }
+
+  //test
+  // function loadLocalTimeZone() {
+  //   return Intl.DateTimeFormat().resolvedOptions().timeZone;
+  // }
 
   return (
     <div>
