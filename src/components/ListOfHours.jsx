@@ -17,10 +17,8 @@ const ListOfHours = (props) => {
   const [timeGmt, setTimeGmt] = useState();
 
   useEffect(() => {
-    setInterval(() => {
-      const date = new Date();
-      setTimeGmt(date.getUTCHours());
-    }, 1000);
+    const date = new Date();
+    setTimeGmt(date.getUTCHours());
   }, []);
 
   const getLocalHour = () => {
@@ -90,9 +88,6 @@ const ListOfHours = (props) => {
         <thead className={style.thead}>
           <tr className={style.thtr}>
             <th className={style.th}>{defaultTimeZoneTitle()}</th>
-
-            {/* {timeGmt}
-            {props.num} */}
           </tr>
         </thead>
 
