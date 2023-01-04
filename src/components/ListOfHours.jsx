@@ -27,7 +27,6 @@ const ListOfHours = (props) => {
   };
 
   function defaultTimeZoneTitle() {
-    const date = new Date();
     if (props.title === undefined) {
       return Intl.DateTimeFormat().resolvedOptions().timeZone;
       // date
@@ -82,11 +81,6 @@ const ListOfHours = (props) => {
     }
     return style.nightHours;
   }
-
-  //test
-  // function loadLocalTimeZone() {
-  //   return Intl.DateTimeFormat().resolvedOptions().timeZone;
-  // }
 
   return (
     <div>

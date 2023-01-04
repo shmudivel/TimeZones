@@ -14,12 +14,21 @@ const style = {
 
 const AddSelectTimeZones = () => {
   const [addTZ, setAddTZ] = useState([]);
+  const [howManySelects, setHowManySelects] = useState(0);
 
-  console.log(addTZ);
+  const loadLocalStorageForState = localStorage.setItem(
+    "howManySelects",
+    howManySelects
+  );
+
+  console.log(loadLocalStorageForState);
 
   const onAddBtnSelectTime = () => {
     // on click add new select time zone with new key and without removing previous select time zone and without ... spread operator
     setAddTZ((prev) => [...prev, <SelectTime key={prev.length} />]);
+
+    //+ 1 to howManySelects
+    setHowManySelects((prev) => prev + 1);
   };
 
   const onRemoveBtnSelectTime = () => {
@@ -28,9 +37,22 @@ const AddSelectTimeZones = () => {
   };
 
   useEffect(() => {
-    // on load add 2 select time zones
-    setAddTZ((prev) => [...prev, <SelectTime key={prev.length} />]);
+    // on load add 2 select time zones if there is no selects in local storage
+    // if there is selects in local storage then load them number of selects from local storage
+    if (localStorage.getItem("howManySelects") === null) {
+      setAddTZ((prev) => [...prev, <SelectTime key={prev.length} />]);
+      setAddTZ((prev) => [...prev, <SelectTime key={prev.length} />]);
+    } else {
+      for (let i = 0; i < localStorage.getItem("howManySelects"); i++) {
+        setAddTZ((prev) => [...prev, <SelectTime key={prev.length} />]);
+      }
+    }
   }, []);
+
+  useEffect(() => {
+    // save to local storage how many selects are even if page is refreshed
+    localStorage.setItem("howManySelects", howManySelects);
+  }, [howManySelects]);
 
   return (
     <div className={style.container}>
