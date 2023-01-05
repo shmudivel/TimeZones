@@ -16,13 +16,11 @@ const AddSelectTimeZones = () => {
   const [addTZ, setAddTZ] = useState([]);
 
   const onAddBtnSelectTime = () => {
-    // on click add new select time zone with new key and without removing previous select time zone and without ... spread operator
     setAddTZ((prev) => [...prev, <SelectTime key={prev.length} />]);
   };
 
   const onRemoveBtnSelectTime = () => {
-    // on click remove last select time zone
-    setAddTZ((prev) => prev.slice(0, prev.length - 1));
+    setAddTZ((prev) => prev.slice(0, -1));
   };
 
   return (
