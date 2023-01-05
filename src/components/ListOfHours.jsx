@@ -75,126 +75,18 @@ const ListOfHours = (props) => {
         </thead>
 
         <tbody className={style.tbody}>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(0))}>
-              {reduceGmt(0)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(1))}>
-              {reduceGmt(1)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(2))}>
-              {reduceGmt(2)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(3))}>
-              {reduceGmt(3)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(4))}>
-              {reduceGmt(4)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(5))}>
-              {reduceGmt(5)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(6))}>
-              {reduceGmt(6)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(7))}>
-              {reduceGmt(7)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(8))}>
-              {reduceGmt(8)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(9))}>
-              {reduceGmt(9)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(10))}>
-              {reduceGmt(10)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(11))}>
-              {reduceGmt(11)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(12))}>
-              {reduceGmt(12)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(13))}>
-              {reduceGmt(13)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(14))}>
-              {reduceGmt(14)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(15))}>
-              {reduceGmt(15)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(16))}>
-              {reduceGmt(16)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(17))}>
-              {reduceGmt(17)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(18))}>
-              {reduceGmt(18)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(19))}>
-              {reduceGmt(19)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(20))}>
-              {reduceGmt(20)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(21))}>
-              {reduceGmt(21)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(22))}>
-              {reduceGmt(22)}:00
-            </td>
-          </tr>
-          <tr>
-            <td className={threeStyleHourColoringStyle(reduceGmt(23))}>
-              {reduceGmt(23)}:00
-            </td>
-          </tr>
+          {/* Use a for loop to generate the rows of the table */}
+          {Array.from(Array(24).keys()).map((hour) => (
+            <tr key={hour}>
+              <td
+                className={`${style.td} ${threeStyleHourColoringStyle(
+                  reduceGmt(hour)
+                )}`}
+              >
+                {reduceGmt(hour)}:00
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
