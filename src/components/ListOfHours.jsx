@@ -29,48 +29,31 @@ const ListOfHours = (props) => {
   function defaultTimeZoneTitle() {
     if (props.title === undefined) {
       return Intl.DateTimeFormat().resolvedOptions().timeZone;
-      // date
-      //   .toLocaleTimeString("en-us", { timeZoneName: "short" })
-      //   .split(" ")[2];
     } else {
       return props.title;
     }
   }
 
   function reduceGmt(hour) {
-    // let because of NaN and I need to redeclare it
+    // Initialize totalHours to timeGmt + props.num + hour
     let totalHours = timeGmt + props.num + hour;
 
-    // localHour is the local time plus the hour from table
-    const localHour = getLocalHour() + hour;
-
-    // if totalHours is not a number then return localHour
+    // If totalHours is not a number, set totalHours to the local time plus the hour from the table
     if (isNaN(totalHours)) {
-      let totalHours = localHour;
-      if (totalHours < 0) {
-        return totalHours + 24;
-      } else if (totalHours < 24) {
-        return totalHours;
-      } else if (totalHours < 36) {
-        return totalHours - 24;
-      } else if (totalHours < 48) {
-        return totalHours - 24;
-      } else {
-        return totalHours - 48;
-      }
+      totalHours = getLocalHour() + hour;
     }
-    // if totalHours is a number then return totalHours
+
+    // Use a for loop to keep subtracting 24 from totalHours until it is less than 24
+    for (let i = 0; totalHours >= 24; i++) {
+      totalHours -= 24;
+    }
+
+    // If totalHours is less than 0, add 24
     if (totalHours < 0) {
-      return totalHours + 24;
-    } else if (totalHours < 24) {
-      return totalHours;
-    } else if (totalHours < 36) {
-      return totalHours - 24;
-    } else if (totalHours < 48) {
-      return totalHours - 24;
-    } else {
-      return totalHours - 48;
+      totalHours += 24;
     }
+
+    return totalHours;
   }
 
   function threeStyleHourColoringStyle(hour) {
