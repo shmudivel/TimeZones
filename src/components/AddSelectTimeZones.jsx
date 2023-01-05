@@ -29,18 +29,6 @@ const AddSelectTimeZones = () => {
     onAddBtnSelectTime();
   }, []);
 
-  // local storage for time zones
-  useEffect(() => {
-    const data = localStorage.getItem("timeZones");
-    if (data) {
-      setAddTZ(JSON.parse(data));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("timeZones", JSON.stringify(addTZ));
-  }, [addTZ]);
-
   return (
     <div className={style.container}>
       <h1 className={style.heading}>Time zones</h1>
