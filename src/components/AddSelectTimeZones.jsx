@@ -15,6 +15,8 @@ const style = {
 const AddSelectTimeZones = () => {
   const [addTZ, setAddTZ] = useState([]);
 
+  console.log(addTZ);
+
   const onAddBtnSelectTime = () => {
     setAddTZ((prev) => [...prev, <SelectTime key={prev.length} />]);
   };
@@ -22,6 +24,22 @@ const AddSelectTimeZones = () => {
   const onRemoveBtnSelectTime = () => {
     setAddTZ((prev) => prev.slice(0, -1));
   };
+
+  useEffect(() => {
+    onAddBtnSelectTime();
+  }, []);
+
+  // local storage for time zones
+  useEffect(() => {
+    const data = localStorage.getItem("timeZones");
+    if (data) {
+      setAddTZ(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("timeZones", JSON.stringify(addTZ));
+  }, [addTZ]);
 
   return (
     <div className={style.container}>
