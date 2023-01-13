@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TimezoneSelect, { allTimezones } from "react-timezone-select";
 import ListOfHours from "./ListOfHours";
 
@@ -8,6 +8,18 @@ const SelectTime = () => {
   function loadLocalTimeZone() {
     return Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
+
+  // useEffect(() => {
+  //   localStorage.setItem("selectedTimezone", selectedTimezone);
+  // }, [selectedTimezone]);
+
+  // useEffect(() => {
+  //   const timezoneFromLocalStorage = localStorage.getItem("selectedTimezone");
+  //   if (timezoneFromLocalStorage) {
+  //     setSelectedTimezone(timezoneFromLocalStorage);
+  //   }
+  // }, []);
+
 
   return (
     <div className="border-1 text-sm round-sm">
