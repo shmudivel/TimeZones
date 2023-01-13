@@ -13,7 +13,15 @@ const style = {
 };
 
 const AddSelectTimeZones = () => {
-  const [addTZ, setAddTZ] = useState([]);
+  const [addTZ, setAddTZ] = useState(() => {
+    const timeZonesFromLocalStorage = localStorage.getItem("selectedTimeZones");
+    if (timeZonesFromLocalStorage) {
+      return Array(parseInt(timeZonesFromLocalStorage)).fill(<SelectTime />);
+    }
+    return [];
+  });
+  
+
 
   console.log(addTZ);
 
@@ -25,9 +33,25 @@ const AddSelectTimeZones = () => {
     setAddTZ((prev) => prev.slice(0, -1));
   };
 
+
+
   useEffect(() => {
-    onAddBtnSelectTime();
-  }, []);
+    localStorage.setItem("selectedTimeZones", addTZ.length);
+  }, [addTZ]);
+
+  // useEffect(() => {
+  //   const timeZonesFromLocalStorage = localStorage.getItem("selectedTimeZones");
+  //   if (timeZonesFromLocalStorage) {
+  //     setAddTZ(Array(parseInt(timeZonesFromLocalStorage)).fill(<SelectTime />));
+  //   }
+  // }, []);
+
+
+  
+
+  // useEffect(() => {
+  //   onAddBtnSelectTime();
+  // }, []);
 
   return (
     <div className={style.container}>
