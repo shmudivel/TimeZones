@@ -14,7 +14,7 @@ const style = {
 
 const AddSelectTimeZones = () => {
   const [addTZ, setAddTZ] = useState(() => {
-    const timeZonesFromLocalStorage = localStorage.getItem("selectedTimeZones");
+    const timeZonesFromLocalStorage = localStorage.getItem("selectedTimeZonesNumber");
     if (timeZonesFromLocalStorage) {
       return Array(parseInt(timeZonesFromLocalStorage)).fill(<SelectTime />);
     }
@@ -38,22 +38,9 @@ const AddSelectTimeZones = () => {
 
 
   useEffect(() => {
-    localStorage.setItem("selectedTimeZones", addTZ.length);
+    localStorage.setItem("selectedTimeZonesNumber", addTZ.length);
   }, [addTZ]);
 
-  // useEffect(() => {
-  //   const timeZonesFromLocalStorage = localStorage.getItem("selectedTimeZones");
-  //   if (timeZonesFromLocalStorage) {
-  //     setAddTZ(Array(parseInt(timeZonesFromLocalStorage)).fill(<SelectTime />));
-  //   }
-  // }, []);
-
-
-  
-
-  // useEffect(() => {
-  //   onAddBtnSelectTime();
-  // }, []);
 
   return (
     <div className={style.container}>
@@ -70,7 +57,9 @@ const AddSelectTimeZones = () => {
       </div>
 
       <div className=" w-fit min-w-[50px] py-2 grid grid-flow-col gap-2">
-        {addTZ}
+        {addTZ.map((tz, index) => (
+          <SelectTime key={index} />
+        ))}
       </div>
     </div>
   );

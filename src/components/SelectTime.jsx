@@ -2,23 +2,24 @@ import React, { useState, useEffect } from "react";
 import TimezoneSelect, { allTimezones } from "react-timezone-select";
 import ListOfHours from "./ListOfHours";
 
-const SelectTime = () => {
-  const [selectedTimezone, setSelectedTimezone] = useState(loadLocalTimeZone());
+const SelectTime = ({key}) => {
+  const [selectedTimezone, setSelectedTimezone] = useState(() => {
+    const storedTimezone = localStorage.getItem("selectedTimezone_" + key);
+    if (storedTimezone) {
+      return JSON.parse(storedTimezone);
+    }
+    return loadLocalTimezone();
+  });
 
-  function loadLocalTimeZone() {
+  function loadLocalTimezone() {
     return Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
-  // useEffect(() => {
-  //   localStorage.setItem("selectedTimezone", selectedTimezone);
-  // }, [selectedTimezone]);
+  useEffect(() => {
+    localStorage.setItem("selectedTimezone_" + key, JSON.stringify(selectedTimezone));
+  }, [selectedTimezone, key]);
 
-  // useEffect(() => {
-  //   const timezoneFromLocalStorage = localStorage.getItem("selectedTimezone");
-  //   if (timezoneFromLocalStorage) {
-  //     setSelectedTimezone(timezoneFromLocalStorage);
-  //   }
-  // }, []);
+
 
 
   return (
